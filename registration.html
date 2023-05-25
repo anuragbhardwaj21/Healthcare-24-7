@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <link rel="stylesheet" href="registration.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <div class="nnn">
+<br>
+    <div class="container">
+
+
+      <h1>Registered</h1>
+
+      <form id="registration-form">
+        <label for="name"><b>Full Name</b></label>
+        <input class="ABC" type="text" placeholder="Enter Full name" name="name" id="name" required>
+
+        <label for="email"><b>Email</b></label>
+        <input class="ABC" type="text" placeholder="Enter Email" name="email" id="email" required>
+
+        <label for="cemail"><b>Confirm Email</b></label>
+        <input class="ABC" type="text" placeholder="Enter confirm Email" name="cemail" id="cemail" required>
+
+
+        <label for="psw"><b>Password</b></label>
+        <div class="password-container">
+          <input class="ABC" type="password" placeholder="Enter Password" name="psw" id="password" required>
+          <span class="password-icon" onclick="togglePasswordVisibility()">Show</span>
+        </div>
+
+        <label for="psw-repeat"><b>Confirm Password</b></label>
+        <div class="password-container">
+          <input class="ABC" type="password" placeholder="Confirm Password" name="psw-repeat" id="psw-repeat" required>
+          <span class="password-icon1" onclick="togglePasswordVisibilityRepeat()">Show</span>
+        </div>
+
+
+        <label for="number"><b>Phone Name</b></label>
+        <input class="ABC" type="text" placeholder="Enter phone name" name="number" id="number" required>
+
+        <button type="submit" class="registerbtn">CONTINUE</button>
+        <h5>By proceeding, you confirm that you agree to our <a href="">Terms and Conditions</a> and <a href="">Privacy Policy</a></h5>
+      </form>
+
+    </div>
+    <br>
+    <script>
+      document.querySelector("#registration-form").addEventListener("submit", registration);
+      var userArr = JSON.parse(localStorage.getItem("userInfo")) || [];
+
+      function registration(event) {
+        event.preventDefault();
+        var fullname = document.querySelector("#name").value;
+        var email = document.querySelector("#email").value;
+        var confirm_email = document.querySelector("#cemail").value;
+        var password = document.querySelector("#password").value;
+        var confirm_password = document.querySelector("#psw-repeat").value;
+        var phone_num = document.querySelector("#number").value;
+
+        var userInfo = {
+          name: fullname,
+          email: email,
+          confirm_email: confirm_email,
+          password: password, // Corrected variable name
+          confirm_password: confirm_password,
+          phone_num: phone_num
+        };
+
+        userArr.push(userInfo);
+        localStorage.setItem("userInfo", JSON.stringify(userArr));
+        alert("Registration Successfully Done");
+        window.location.href = "login.html";
+      }
+
+      function togglePasswordVisibility() {
+        var passwordInput = document.querySelector("#password");
+        var toggleIcon = document.querySelector(".password-icon");
+
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          toggleIcon.textContent = "Hide";
+        } else {
+          passwordInput.type = "password";
+          toggleIcon.textContent = "Show";
+        }
+      }
+
+      function togglePasswordVisibilityRepeat() {
+        var confirmPasswordInput = document.querySelector("#psw-repeat");
+        var toggleIconRepeat = document.querySelector(".password-icon1");
+
+        if (confirmPasswordInput.type === "password") {
+          confirmPasswordInput.type = "text";
+          toggleIconRepeat.textContent = "Hide";
+        } else {
+          confirmPasswordInput.type = "password";
+          toggleIconRepeat.textContent = "Show";
+        }
+      }
+    </script>
+  </div>
+
+  <script type="module" src="script.js"></script>
+  <script type="module" src="./components/components.js"></script>
+</body>
+
+</html>

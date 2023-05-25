@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="productpagestyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Product Page</title>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div id="productbody">
+      <div id="left-product-categories">
+        <p>Product Categories</p>
+
+        <select name="" id="sort-by-brand">
+          <option value="default">Sort By : Brand</option>
+          <option value="Eisai Pharmaceuticals India Pvt Ltd">
+            Eisai Pharmaceuticals India Pvt Ltd
+          </option>
+          <option value="Glaxo SmithKline Pharmaceuticals Ltd">
+            Glaxo SmithKline Pharmaceuticals Ltd
+          </option>
+          <option value="Dr Reddy's Laboratories Ltd">
+            Dr Reddy's Laboratories Ltd
+          </option>
+          <option value="Abbott">Abbott</option>
+          <option value="Pfizer Ltd">Pfizer Ltd</option>
+          <option value="Alkem Laboratories Ltd">Alkem Laboratories Ltd</option>
+          <option value="Torrent Pharmaceuticals Ltd">
+            Torrent Pharmaceuticals Ltd
+          </option>
+          <option value="Sanofi India Ltd">Sanofi India Ltd</option>
+          <option value="Mankind Pharma Ltd">Mankind Pharma Ltd</option>
+          <option value="RPG Life Sciences Ltd">RPG Life Sciences Ltd</option>
+          <option value="Cipla Ltd">Cipla Ltd</option>
+          <option value="Win-Medicare Pvt Ltd">Win-Medicare Pvt Ltd</option>
+        </select>
+
+        <select id="sort-by-name">
+          <option value="default">Sort By : Name</option>
+          <option value="name">Ascending</option>
+          <option value="-name">Descending</option>
+        </select>
+
+        <select id="sort-by-disease">
+          <option value="default">Sort By : Disease</option>
+          <option value="Alzheimer's disease">Alzheimer's disease</option>
+          <option value="Treatment of Bacterial infections">
+            Treatment of Bacterial infections
+          </option>
+          <option value="In Treatment of Treatment of Anxiety">
+            In Treatment of Treatment of Anxiety
+          </option>
+          <option
+            value="Treatment of Skin conditions with inflammation & itching"
+          >
+            Treatment of Skin conditions with inflammation & itching
+          </option>
+          <option value="Treatment of Resistant Tuberculosis (TB)">
+            Treatment of Resistant Tuberculosis (TB)
+          </option>
+          <option value="Treatment of Dry cough">Treatment of Dry cough</option>
+          <option value="Treatment of Anal fissure">
+            Treatment of Anal fissure
+          </option>
+        </select>
+
+        <select id="sort-by-price">
+          <option value="default">Sort By : Price</option>
+          <option value="-mrp">Sort By : High to Low</option>
+          <option value="mrp">Sort By : Low to high</option>
+        </select>
+      </div>
+
+      <div id="right-products"></div>
+    </div>
+    <div id="footer"></div>
+  </body>
+  <script type="module" src="productpagescript.js"></script>
+</html>

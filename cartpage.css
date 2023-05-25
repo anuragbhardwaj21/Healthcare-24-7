@@ -1,0 +1,250 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.box {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  
+ 
+  /* padding: 10px; */
+  /* margin-bottom: 10px; */
+}
+
+/* .content {
+  flex: 1;
+  display: flex;
+  border: 2px solid green;
+  flex-direction: column;
+} */
+
+.describe{
+  display: block;
+  padding: 10px;
+  
+  
+}
+.picture {
+  width: 40%; /* Adjust the width as needed */
+  height: 40%;
+ 
+ margin-top: 5px;
+ margin-left: 130px;
+
+
+}
+
+
+
+body {
+  margin: 32px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: 1px solid lighten(gray, 24%);
+  height: 48px;
+  padding: 0 24px 0 16px;
+  letter-spacing: .25px;
+  border-radius: 24px;
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+  }
+  
+  .mdi {
+    margin-right: 8px;
+  }
+}
+
+.btn-delete {
+  font-size: 16px;
+  color: red;
+  
+  >.mdi-delete-empty {
+    display: none;
+  }
+  
+  &:hover {
+    background-color: lighten(red, 48%);
+    
+    >.mdi-delete-empty {
+      display: block;
+    }
+    
+    >.mdi-delete {
+      display: none;
+    }
+  }
+  
+
+  
+  &:focus {
+    box-shadow: 0 0 0 4px lighten(red, 40%);
+  }
+}
+
+
+
+
+
+#payment_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+
+
+#container {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  padding: 20px;
+}
+
+#cart_items {
+  flex: 1;
+  max-width: 500px;
+  margin-right: 20px; /* Adjust the max-width value to make the medicine box smaller */
+  flex-direction: column;
+}
+
+.medicine {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column; /* Display elements vertically */
+  align-items: flex-start; /* Align elements to the left */
+  font-family: Arial, sans-serif; /* Change the font family */
+  font-size: medium; 
+}
+
+.medicine h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.medicine p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #777;
+  font-family: Arial, sans-serif;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.mrp {
+  color: #888;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.remove-btn {
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.decrease-btn,
+.increase-btn {
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#cart_total {
+  width: 300px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  text-align: center;
+}
+
+.summary {
+  margin-bottom: 20px;
+}
+
+.p_class {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+#tbp,
+#total_savings {
+  font-weight: bold;
+  color: #333;
+}
+
+.delivery-location {
+  margin-top: 20px;
+}
+
+#checkout-btn {
+  padding: 10px 20px;
+  background-color: #115d58;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#payment_footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+#payment_footer p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #777;
+}
+
+#payment_footer span {
+  color: blue;
+  text-decoration: underline;
+}
+
+
+
+
+
+

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>productDetails</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Rajdhani:wght@300&family=Work+Sans:ital,wght@0,500;1,300&display=swap" rel="stylesheet">
+  
+    <style>
+        #container {
+            display: flex;
+            justify-content: space-evenly;
+
+
+        }
+        /* *{
+            font-family: 'Montserrat', sans-serif;
+font-family: 'Rajdhani', sans-serif;
+font-family: 'Work Sans', sans-serif;
+        } */
+
+        #c1 {
+            width: 15%;
+            height: 50vh;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            border-radius: 10px;    
+            display: block;
+
+        }
+
+        #c1>ul {
+            list-style: none;
+            padding-top: 0px;
+            margin-top: auto;
+
+
+        }
+
+        li:first-child {
+            font-weight: 700;
+        }
+
+        #c1>ul>li {
+            padding: 20px 0px 20px 0px;
+            cursor: pointer;
+
+        }
+
+        #c1>ul>li:hover {
+            font-size: 16px;
+            font-weight: 900;
+        }
+
+        #c2 {
+            width: 45%;
+            height: auto;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            border-radius: 10px;    
+            padding: 20px;
+        }
+
+        #imgdiv>img {
+            width: 250px;
+        }
+
+        .heading {
+            font-weight: 900;
+            font-style: oblique;
+        }
+
+        .heading2 {
+            font-weight: 800;
+        }
+
+        #c3 {
+            width: 30%;
+            height: 54vh;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            border-radius: 10px;    
+
+        }
+
+
+        #up {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #detail {
+            display: block;
+        }
+
+        form {
+            text-align: center;
+        }
+        #pricedata{
+            padding: 15px;
+        }
+
+        #addtocart>button {
+
+            background-color: #FC9916;
+            width: 95%;
+            margin-left: 15px;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+
+
+        }
+
+        .value-button {
+            display: inline-block;
+            border: 1px solid #ddd;
+            margin: 0px;
+            width: 40px;
+            height: 20px;
+            text-align: center;
+            vertical-align: middle;
+            padding: 11px 0;
+            background: #eee;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .value-button:hover {
+            cursor: pointer;
+        }
+
+        form #decrease {
+            margin-right: -4px;
+            border-radius: 8px 0 0 8px;
+        }
+
+        form #increase {
+            margin-left: -4px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        form #input-wrap {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        input#number {
+            text-align: center;
+            border: none;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            margin: 0px;
+            width: 40px;
+            height: 40px;
+        }
+        #word{
+            text-align: center;
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div id="container">
+        <div id="c1">
+            <ul id="list">
+
+            </ul>
+        </div>
+        <div id="c2">
+            <div id="up">
+                <div id="detail"></div>
+                <div id="imgdiv"></div>
+            </div>
+            <div id="down"></div>
+        </div>
+        <div id="c3">
+            
+            <div id="pricedata"></div>
+            <form>
+                <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                <input type="number" id="number" value="1" />
+                <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+            </form>
+            <div id="addtocart"></div>
+
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+<script src="singleProd.js"></script>
+<script type="module" src="linknav.js"></script>
+
+</html>

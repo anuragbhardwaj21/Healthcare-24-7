@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../HealthCare/products_page.html" />
+    <title>Healthcare</title>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div id="body">
+      <div id="suggestion"></div>
+      <div id="imagesection">
+        <div id="divaboveimage">
+          <p>The place where your health matters the most.</p>
+          <span>Better health starts here.</span>
+          <a href="">More About Us</a>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGlsbHN8ZW58MHx8MHx8&w=1000&q=80"
+          alt=""
+        />
+      </div>
+
+      <div id="textsection">
+        <p>Best-in-class</p>
+        <p>Healthcare Services</p>
+        <p>
+          Healthcare: Your Trusted Cornerstone for Quality Medicines, Expert
+          Advice, and Holistic Wellness Solutions. Discover the Power of Optimal
+          Health at Healthcare Pharmacy Today!
+        </p>
+      </div>
+
+      <div id="cardsection"></div>
+
+      <div id="greenbanner1"></div>
+
+      <div id="storiessection">
+        <p id="hearFromPatients">Hear from our patients</p>
+        <p id="test-stories">Testimonials & Stories</p>
+        <div id="stories-card-section"></div>
+      </div>
+
+      <div id="greenbanner2">
+        <div id="greenbanner2left">
+          <p>
+            Avail a free consultation and start your healthcare journey today
+          </p>
+          <button id="greenbanner2-registerBtn" ><a href="./registration.html" style="text-decoration: none; color: rgba(0, 0, 0, 0.77);">Register Now</a></button>
+        </div>
+        <div id="greenbanner2right">
+          <img src="./images/consultation3.png" alt="" />
+        </div>
+      </div>
+
+      <div id="contact-form"></div>
+    </div>
+
+    <div id="footer"></div>
+  </body>
+  <script type="module" src="script.js"></script>
+  <script type="module" src="./components/components.js"></script>
+  <script>
+    let timeId;
+    var single_product = [];
+    function singlepro(i) {
+      single_product.push(i);
+      localStorage.setItem("single_prod", JSON.stringify(single_product));
+      window.location.href = "singleProduct.html";
+    }
+    function perpro(e) {
+      singlepro(e);
+    }
+    function display(a) {
+      let sugbox = document.getElementById("suggestion");
+      let arr = a.mydata;
+      for (let i = 0; i < 5; i++) {
+        let sp = document.createElement("span");
+        sp.setAttribute("class", "sp");
+        sp.append(arr[i].name);
+        sp.addEventListener("click", function () {
+          perpro(arr[i]);
+        });
+
+        sugbox.append(sp);
+      }
+    }
+    const fetch_api = async (api) => {
+      try {
+        let resp = await fetch(api);
+        let res = await resp.json();
+        display(res);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    function func() {
+      let inputid = document.getElementById("searchInputNav").value;
+      if (inputid == "") {
+        window.location.reload();
+      }
+      let searchapi = `https://chiragajmeraapi.onrender.com/api/products?name=${inputid}`;
+      fetch_api(searchapi);
+    }
+    function search() {
+      let inputid1 = document.getElementById("searchInputNav").value;
+
+      if (inputid1 == "") {
+        window.location.reload();
+      }
+
+      let searchapi1 = `https://chiragajmeraapi.onrender.com/api/products?name=${inputid1}`;
+      fetch_api(searchapi1);
+    }
+
+    const debounce = (func, delay) => {
+      document.getElementById("suggestion").style.display = "flex";
+
+      if (timeId) {
+        clearTimeout(timeId);
+      }
+      timeId = setTimeout(() => {
+        func();
+      }, delay);
+    };
+  </script>
+</html>

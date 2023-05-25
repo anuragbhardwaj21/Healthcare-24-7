@@ -1,0 +1,58 @@
+:root {
+  --green: #115d58;
+  --orange: #fba637f6;
+}
+#mainbody {
+  width: 80%;
+  height: 80vh;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+#login ,#signup{
+  text-align: center;
+  width: 30%;
+  margin: auto;
+  padding: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+  background-color: rgba(0, 0, 0, 0.082);
+  transition: all 0.3s ease-in-out;
+}
+#login p:first-child,#signup p:first-child{
+    color: rgba(0, 0, 0, 0.844);
+    font-size: 3em;
+    margin: 0;
+}
+#login:hover,#signup:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+#login input,#signup input {
+  font-size: 1em;
+  padding: 10px 0 10px 10px;
+  border: .3px solid;
+}
+#login input:focus,#signup input:focus {
+  outline: none;
+}
+#login button,#signup button {
+  width: 40%;
+  align-self: center;
+  font-size: medium;
+  color: var(--green);
+  border: 0.7px solid var(--green);
+  padding: 10px 0 10px 5px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+#login button:hover,#signup button:hover {
+  cursor: pointer;
+  background-color: var(--green);
+  color: rgba(255, 255, 255, 0.824);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+#signup{
+    display: none;
+}

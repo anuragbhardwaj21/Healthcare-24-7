@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="login_signup.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div id="mainbody">
+      <div id="login">
+        <p>Login</p>
+        <input type="email" placeholder="Email" id="login-email" />
+        <input type="password" placeholder="Password" id="login-password" />
+        <button id="login-button">Login</button>
+        <p>Don't have an account ? <a href="" id="register-here">Register here</a></p>
+      </div>
+      <div id="signup">
+        <p>Signup</p>
+        <input type="text" placeholder="Name" id="signup-name" />
+        <input type="email" placeholder="Email" id="signup-email" />
+        <input type="password" placeholder="Password" id="signup-password" />
+        <input type="password" placeholder="Confirm Password" id="signup-cpassword" />
+        <button id="signup-button">Signup</button>
+        <button id="backtologin">Login Now</button>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </body>
+  <script type="module" src="./login_signup.js"></script>
+</html>
