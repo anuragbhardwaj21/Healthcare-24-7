@@ -5,7 +5,7 @@ import {
   data,
   reviewCard,
   greenCard,
-  contactFormRender
+  contactFormRender,
 } from "./components/components.js";
 
 // -----------------------------------------------------------------------------navbar,footer ↓
@@ -126,7 +126,7 @@ searchNavButton.addEventListener("click", function () {
 // ------------------------------------------------------------------------contact us form
 
 const contactForm = document.getElementById("contact-form");
-contactForm.innerHTML=contactFormRender();
+contactForm.innerHTML = contactFormRender();
 const submitButton = document.getElementById("contact-form-submitButton");
 submitButton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -180,6 +180,18 @@ submitButton.addEventListener("click", function (event) {
   localStorage.setItem("contactUsFormDetails", JSON.stringify(storedData));
   alert("Form submitted successfully!");
   contactForm.innerHTML = `
-  <p>Thanks for contacting us ${getName(nameInput.value)}.. Our team will reach you soon</p>
+  <p>Thanks for contacting us ${getName(
+    nameInput.value
+  )}.. Our team will reach you soon</p>
   `;
 });
+
+// -----------------------------------------------------------------------------logout button ↓
+
+const logoutButton = document.getElementById("logout-button");
+
+logoutButton.addEventListener("click", () => {
+  localStorage.removeItem("current-login-username");
+  window.location.href = "index.html";
+});
+ 

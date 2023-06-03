@@ -75,7 +75,7 @@ const loginButton = document.getElementById("login-button");
 loginButton.addEventListener("click", () => {
   const email = document.getElementById("login-email").value;
   const password = document.getElementById("login-password").value;
-
+  const currentusername=document.getElementById("login-name").value
   const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
 
   const user = existingUsers.find(
@@ -89,7 +89,6 @@ loginButton.addEventListener("click", () => {
 
 
   alert("Login successful!");
-
-  document.getElementById("login-email").value = "";
-  document.getElementById("login-password").value = "";
+  localStorage.setItem("current-login-username", currentusername);
+  window.location.href = "index.html";
 });

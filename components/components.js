@@ -1,9 +1,12 @@
 function navbar() {
-  return `
+  const currentUsername = localStorage.getItem("current-login-username");
+
+  if (currentUsername) {
+    return `
     <div id="leftNavItems">
-        <a href="../HealthCare/productpage.html"> Medicines </a>
+        <a href="../Healthcare-24-7/productpage.html"> Medicines </a>
         <a href=""> Doctor</a>
-        <a href="../HealthCare/productpage.html"> Pharmacy</a>
+        <a href="../Healthcare-24-7/productpage.html"> Pharmacy</a>
         <a href=""> Other Services</a>
     </div>
     <div id="searchNav">
@@ -11,12 +14,33 @@ function navbar() {
         <button id="searchNavButton">🔍</button>
     </div>
     <div id="rightNavItems">
-        <a href="../HealthCare/index.html">🏠</a>
-        <a href="../HealthCare/cartpage.html">🛒</a>
-        <a href="../HealthCare/consultnow.html">Consult Now</a>
-        <a href="login.html">Login/Signup</a>
+        <a href="../Healthcare-24-7/index.html">🏠</a>
+        <a href="../Healthcare-24-7/cartpage.html">🛒</a>
+        <a href="../Healthcare-24-7/consultnow.html">Consult Now</a>
+        <a href="#"> Hi, ${currentUsername}</a>
+        <button id="logout-button"><ion-icon name="log-out-outline"></ion-icon></button>
     </div>
     `;
+  } else {
+    return `
+    <div id="leftNavItems">
+        <a href="../Healthcare-24-7/productpage.html"> Medicines </a>
+        <a href=""> Doctor</a>
+        <a href="../Healthcare-24-7/productpage.html"> Pharmacy</a>
+        <a href=""> Other Services</a>
+    </div>
+    <div id="searchNav">
+        <input type="text" id="searchInputNav" oninput="debounce(search(),10000)" placeholder="Search Medicines">
+        <button id="searchNavButton">🔍</button>
+    </div>
+    <div id="rightNavItems">
+        <a href="../Healthcare-24-7/index.html">🏠</a>
+        <a href="../Healthcare-24-7/cartpage.html">🛒</a>
+        <a href="../Healthcare-24-7/consultnow.html">Consult Now</a>
+        <a href="login_signup.html">Login/Signup</a>
+    </div>
+    `;
+  }
 }
 
 function footer() {
@@ -195,24 +219,24 @@ function reviewCard(i) {
   `;
 }
 
-var greenData1=[
+var greenData1 = [
   {
     numbers: "5+",
-    caption:"Years of Experience"
+    caption: "Years of Experience",
   },
   {
     numbers: "300+",
-    caption:"Healthcare Practioners"
+    caption: "Healthcare Practioners",
   },
   {
     numbers: "500+",
-    caption:"Satisfied Clients"
+    caption: "Satisfied Clients",
   },
   {
     numbers: "100+",
-    caption:"Awards"
+    caption: "Awards",
   },
-]
+];
 
 function greenCard(i) {
   return `
@@ -221,7 +245,7 @@ function greenCard(i) {
   `;
 }
 
-function contactFormRender(){
+function contactFormRender() {
   return `
   <p>Meet with our Experts online</p>
   <div id="contact-form-first-div">
@@ -252,6 +276,14 @@ function contactFormRender(){
     <input type="time" placeholder="Select Time">
   </div>
   <button id="contact-form-submitButton">Submit</button>
-  `
+  `;
 }
-export { navbar, footer, commentData, data, reviewCard, greenCard, contactFormRender };
+export {
+  navbar,
+  footer,
+  commentData,
+  data,
+  reviewCard,
+  greenCard,
+  contactFormRender,
+};

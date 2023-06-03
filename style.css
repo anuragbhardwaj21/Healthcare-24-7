@@ -135,6 +135,16 @@ body {
   background-color: var(--green);
   color: white;
 }
+#logout-button{
+  background-color: transparent;
+  border: 0.7px solid #279a87;
+  color: var(--green);
+  transition: all 0.3s;
+}
+#logout-button:hover{
+  background-color: var(--green);
+  color: white;
+}
 #footer {
   background-color: rgba(0, 0, 0, 0.807);
 }
@@ -634,4 +644,8 @@ td a:hover {
     color: rgba(0, 0, 0, 0.807);
     margin-bottom: 0;
   }
+}
+
+.current-logged-user{
+  color: red;
 }
